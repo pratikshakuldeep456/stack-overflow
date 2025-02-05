@@ -26,6 +26,11 @@ func main() {
 	so.Vote(user1.ID, q1.ID, true, true)
 
 	results, _ := so.SearchQuestion("mutex", "golang", user1.ID)
+
+	fmt.Println("Questions with 'golang' tag:")
+	for _, q := range results {
+		fmt.Printf("ID: %d, Title: %s, UserID: %d\n", q.ID, q.Title, q.UserID)
+	}
 	fmt.Println("Questions with 'golang' tag:", len(results))
 
 	fmt.Println("Questions with 'golang' tag:", len(results))
